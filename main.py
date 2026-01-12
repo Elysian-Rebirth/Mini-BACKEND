@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from database import create_db_and_tables
-from routers import flow, auth, component, variable, chat
+from routers import flow, auth, component, variable, chat, web
 import time
 from collections import defaultdict
 
@@ -65,6 +65,12 @@ app.include_router(flow.router, prefix="/api/v1/flows", tags=["Flow"])
 app.include_router(component.router, prefix="/api/v1/component", tags=["Component"])
 app.include_router(variable.router, prefix="/api/v1/variable", tags=["Variable"])
 app.include_router(chat.router, prefix="/api/v1/workflow", tags=["Chat"])
+app.include_router(web.router, prefix="/api/v1/web", tags=["Web"])
+
+@app.get("/")
+def read_root():
+    return {"status": "Bisheng Lite Backend is Running"}
+
 
 @app.get("/health")
 def health_check():
