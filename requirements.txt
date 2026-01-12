@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlmodel
+python-multipart
+aiofiles
+httpx
+python-dotenv
+litellm
+websockets
+pydantic-settings
