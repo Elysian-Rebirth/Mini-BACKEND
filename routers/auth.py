@@ -60,3 +60,15 @@ def get_user_info():
 @router.post("/logout")
 def logout():
     return {"status_code": 200, "status_message": "success"}
+
+@router.get("/get_captcha")
+def get_captcha():
+    # Mock captcha response
+    return {
+        "status_code": 200,
+        "data": {
+            "captcha_id": "mock-captcha-id",
+            "image": "" # Frontend might expect base64, leaving empty for now or valid minimal base64 if needed
+        }
+    }
+
