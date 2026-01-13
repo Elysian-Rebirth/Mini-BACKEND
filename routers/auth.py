@@ -50,6 +50,7 @@ def get_user_info():
     # Return dummy user info
     return {
         "status_code": 200,
+        "status_message": "success",
         "data": {
             "user_id": 1,
             "user_name": "admin",
@@ -66,9 +67,9 @@ def get_captcha():
     # Mock captcha response
     return {
         "status_code": 200,
+        "status_message": "success",
         "data": {
             "captcha_id": "mock-captcha-id",
             "image": "" # Frontend might expect base64, leaving empty for now or valid minimal base64 if needed
         }
     }
-
